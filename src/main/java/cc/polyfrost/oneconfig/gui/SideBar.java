@@ -74,7 +74,7 @@ public class SideBar {
         buttons.get(1).setClickAction(new ModsPage());
         buttons.get(2).setClickAction(new ModConfigPage(Preferences.getInstance().mod.defaultPage, true));
         buttons.get(3).setClickAction(new OpenLinkAction("https://cosmetica.cc/manage"));
-        buttons.get(4).setClickAction(new OpenLinkAction("https://ryzeclient.xyz/capes"));
+        buttons.get(4).setClickAction(new OpenLinkAction("https://ryzeclient.xyz/capes.html"));
         hudButton.setClickAction(() -> GuiUtils.displayScreen(new HudGui()));
         closeButton.setClickAction(GuiUtils::closeScreen);
         for (BasicButton button : buttons) {

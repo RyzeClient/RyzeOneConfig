@@ -36,8 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class ConfigCore {
@@ -76,15 +74,5 @@ public class ConfigCore {
             if (entry.getValue().contains(mod)) return entry.getKey();
         }
         return null;
-    }
-
-    static {
-        Executors.newSingleThreadScheduledExecutor()
-                .scheduleAtFixedRate(
-                        ConfigCore::saveAll,
-                        0,
-                        30,
-                        TimeUnit.SECONDS
-                );
     }
 }

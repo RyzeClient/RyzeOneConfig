@@ -29,7 +29,6 @@ package cc.polyfrost.oneconfig.internal;
 import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
 import cc.polyfrost.oneconfig.events.EventManager;
-import cc.polyfrost.oneconfig.events.event.ShutdownEvent;
 import cc.polyfrost.oneconfig.internal.command.OneConfigCommand;
 import cc.polyfrost.oneconfig.internal.config.OneConfigConfig;
 import cc.polyfrost.oneconfig.internal.config.Preferences;
@@ -38,7 +37,6 @@ import cc.polyfrost.oneconfig.internal.config.core.ConfigCore;
 import cc.polyfrost.oneconfig.internal.config.core.KeyBindHandler;
 import cc.polyfrost.oneconfig.internal.gui.BlurHandler;
 import cc.polyfrost.oneconfig.internal.hud.HudCore;
-import cc.polyfrost.oneconfig.libs.eventbus.Subscribe;
 import cc.polyfrost.oneconfig.libs.universal.ChatColor;
 import cc.polyfrost.oneconfig.libs.universal.UChat;
 import cc.polyfrost.oneconfig.libs.universal.UScreen;
@@ -261,9 +259,4 @@ public class OneConfig {
         return true;
     }
     //#endif
-
-    @Subscribe
-    private void onShutdown(ShutdownEvent event) {
-        ConfigCore.saveAll();
-    }
 }
